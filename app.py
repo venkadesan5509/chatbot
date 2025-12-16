@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from google import genai
 from google.genai import types
@@ -12,7 +11,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 # Store document text globally (simple version)
 DOCUMENT_TEXT = ""
