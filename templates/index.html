@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuChat AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fa-brands fa-rocketchat"></i>
+                </div>
+                <h1>DocuChat</h1>
+            </div>
+
+            <div class="upload-container">
+                <label for="file-input" class="upload-area" id="drop-area">
+                    <div class="upload-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3>Upload Document</h3>
+                    <p>PDF files supported</p>
+                    <input type="file" id="file-input" accept=".pdf" hidden>
+                </label>
+                
+                <div id="file-info" class="file-info hidden">
+                    <div class="file-details">
+                        <i class="fa-regular fa-file-pdf"></i>
+                        <span id="filename">filename.pdf</span>
+                    </div>
+                    <div class="upload-status">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3><i class="fa-regular fa-lightbulb"></i> Tips</h3>
+                <ul>
+                    <li>Upload a PDF document first.</li>
+                    <li>Ask specific questions about the content.</li>
+                    <li>The AI context is limited to the uploaded file.</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="header-info">
+                        <h2>Assistant</h2>
+                        <span class="status-badge"><span class="dot"></span>Online</span>
+                    </div>
+                </div>
+
+                <div class="messages-area" id="chat-box">
+                    <div class="message bot">
+                        <div class="avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bubble">
+                            <p>👋 Welcome! Please upload a document to get started, and then ask me anything about it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <input type="text" id="user-input" placeholder="Ask a question about your document..." autocomplete="off">
+                        <button id="send-btn" onclick="sendMessage()">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
