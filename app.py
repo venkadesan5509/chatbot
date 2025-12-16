@@ -70,4 +70,5 @@ If the answer is not found in the document, use your general knowledge to answer
     return jsonify({"answer": response.text})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
